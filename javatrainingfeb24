@@ -1,0 +1,240 @@
+1. Inheritance 2. Interfaces 3. Exception Handling
+Lab 8 - Conver this code for Exception handling (1. Single catch) 2. Multicatch
+	import java.util.Scanner;
+
+	public class Lab8 {
+		public static void main(String[] args) {
+				Scanner scanner = new Scanner(System.in);
+				System.out.print("Enter a String  1 : ");
+				String no1str = scanner.next();
+				System.out.print("Enter String 2 : ");
+				String no2str = scanner.next();
+				int no1 = Integer.parseInt(no1str);
+				int no2 = Integer.parseInt(no2str);
+				System.out.println("Sum = " + (no1 + no2));
+				System.out.println("Division  = " + (no1 / no2));
+
+		}
+	}
+
+
+Lab 7 - multiple catch statements
+	import java.util.InputMismatchException;
+	import java.util.Scanner;
+
+	public class Lab7 {
+		public static void main(String[] args) {
+			try {
+				Scanner scanner = new Scanner(System.in);
+				System.out.print("Enter Number 1 : ");
+				int no1 = scanner.nextInt();
+				System.out.print("Enter Number 2 : ");
+				int no2 = scanner.nextInt();
+				System.out.println("Sum = " + (no1 + no2));
+				System.out.println("Division  = " + (no1 / no2));
+			} catch (InputMismatchException e) {
+				System.out.println("Please enter only numeric data for number1 and number2" );
+			}
+			catch(ArithmeticException e) {
+				System.out.println("Please enter NonZero value for number2" );
+			}
+		}
+	}
+
+-------------------------
+Lab6 - Single catch Statement
+	import java.util.Scanner;
+
+	public class Lab6 {
+		public static void main(String[] args) {
+			try {
+				Scanner scanner = new Scanner(System.in);
+				System.out.print("Enter Number 1 : ");
+				int no1 = scanner.nextInt();
+				System.out.print("Enter Number 2 : ");
+				int no2 = scanner.nextInt();
+				System.out.println("Sum = " + (no1 + no2));
+				System.out.println("Division  = " + (no1 / no2));
+			} catch (Exception e) {
+				System.out.println("Some Error has occurred.... " +e );
+			}
+		}
+	}
+
+-----------------------
+Lab 5- Write one more class SQLConnection (implements Connection)
+	Accept a string from user(sql/ora).
+		if user give sql -> create SQLConnection
+		else
+			OracleConnection
+			
+interface Connection{
+	public void open();
+	public void close();
+}
+class OracleConnection implements Connection{
+	@Override
+	public void open() {
+		System.out.println("OracleConnection - open method is invoked");
+	}
+	@Override
+	public void close() {
+		System.out.println("OracleConnection - close method is invoked");
+	}
+}
+public class Lab5 {
+	public static void main(String[] args) {
+		Connection con = new OracleConnection();
+		con.open();
+		con.close();
+	}
+}
+
+----------------
+Lab 4- 
+    class Rectangle
+    {
+      int width
+      int length
+
+      draw(){
+        sysout(drawing a rectangle with ... length and ... width
+      }
+    }
+    class ColourRectangle (extends Rectangle)
+    {
+      string colour;
+      draw ()
+      {
+      sysout(drawing a rectangle with ... length and ... width with colour ...
+      }
+    }
+    main()
+    {
+      create an instance of Rectangle, pass length, width and invoke draw method
+    }
+-----------------------------
+
+Lab3 -
+class Parent{
+	private String sirname;
+
+	@Override
+	public String toString() {
+		return "Parent [sirname=" + sirname + "]";
+	}
+	public String getSirname() {
+		return sirname;
+	}
+	public void setSirname(String sirname) {
+		this.sirname = sirname;
+	}
+	
+}
+
+class Child extends Parent {
+	// No OverRidden
+	private String firstname;
+
+	public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	@Override
+	public String toString() {
+		System.out.println(super.toString());
+		return "Child [firstname=" + firstname + "]";
+	}
+	
+}
+
+
+public class Lab3 {
+
+	public static void main(String[] args) {
+		/*
+		 * Parent p1 = new Parent(); p1.setSirname("Ayangar"); System.out.println(p1);
+		 */
+		Child c1 = new Child();
+		c1.setSirname("Ayangar");
+		c1.setFirstname("Alee");
+		System.out.println(c1);
+	}
+
+}
+----------------------------
+Lab 2 - 
+class SimpleOverloading {
+	// Method Overloading
+	public void add(int i, int j) {
+		System.out.println("Sum  = " + (i+j));
+	}
+	public void add(int i, int j, int k) {
+		System.out.println("Sum =  " + (i+j+k));
+	}
+}
+public class Lab2 {
+	public static void main(String[] args) {
+		SimpleOverloading so = new SimpleOverloading();
+		so.add(100, 200);
+		so.add(100,200,300);
+	}
+}
+
+
+-----------------------------
+Lab1 - 
+    class Parent{
+      private String sirname;
+
+      @Override
+      public String toString() {
+        return "Parent [sirname=" + sirname + "]";
+      }
+      public String getSirname() {
+        return sirname;
+      }
+      public void setSirname(String sirname) {
+        this.sirname = sirname;
+      }
+
+    }
+
+    class Child extends Parent {
+      // No OverRidden
+      private String firstname;
+
+      public String getFirstname() {
+        return firstname;
+      }
+
+      public void setFirstname(String firstname) {
+        this.firstname = firstname;
+      }
+
+      @Override
+      public String toString() {
+        System.out.println(super.toString());
+        return "Child [firstname=" + firstname + "]";
+      }
+
+    }
+
+
+    public class Lab3 {
+
+      public static void main(String[] args) {
+        /*
+         * Parent p1 = new Parent(); p1.setSirname("Ayangar"); System.out.println(p1);
+         */
+        Child c1 = new Child();
+        c1.setSirname("Ayangar");
+        c1.setFirstname("Alee");
+        System.out.println(c1);
+      }
+
+    }
