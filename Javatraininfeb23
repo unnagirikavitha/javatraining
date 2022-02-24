@@ -1,0 +1,214 @@
+Lab 10 - 
+	Class BubbleSort{
+		public String[] bsort(String[] input){
+
+			// businesslogic of sort
+		}
+	}
+	-----------
+	Class QuickSort{
+		public String[] qsort(String[] input){
+
+			// businesslogic of sort
+		}
+	}
+	---------------
+	client...
+	main(){
+		String[] arr = {"aa","qq","cc",gg","jj"};
+		BubbleSort bubble = new BubbleSort();
+		bubble.bsort(arr);
+
+		QuickSort quick = new QuickSort();
+		quick.qsort(arr);
+
+	}
+-----------------
+Lab 9 - 
+	interface Talk {
+		public void sayhello();
+	}
+
+	class Dog implements Talk {
+		@Override
+		public void sayhello() {
+			System.out.println("Dog Barks");
+		}
+	}
+
+	class Human implements Talk {
+		@Override
+		public void sayhello() {
+			System.out.println("Human - says Hello");
+		}
+	}
+
+	public class Lab9 {
+		public static void main(String[] args) {
+			Talk t1 = new Dog();
+			t1.sayhello();
+			t1 = new Human();
+			t1.sayhello();
+
+		}
+	}
+
+----------------
+Lab 8 - 
+          class Base{
+	public void m1() {
+		System.out.println("Base Method - m1");
+	}
+          }
+          class Derived extends Base{
+	           
+          }
+          public class Lab8 {
+	public static void main(String[] args) {
+		Base b1 =new Base();
+		b1.m1();
+		Derived d1 = new Derived();
+		d1.m1();
+	}
+          ---Check which method is called with you invoke d1.m1()
+          --- override m1 method in Derived class
+          ---Check which method is called with you invoke d1.m1()
+                    
+Lab 7 - Basic inheritance 
+          Write Lab7.java to create Emp, ContractEmp, public Lab7 classes
+           class Emp{
+                    private int empno;
+                    private String ename;
+                    private double salary;
+                    + public getter/setter + toString
+          class ContractEmp extends Emp  {
+	          private String contractcomp;
+	          private String contractperson;
+                    + public getter/setter + toString
+          
+          public class Lab7 {
+
+                    public static void main(String[] args) {
+                              Emp e1 = new Emp();
+                              e1.setEmpno(10);
+                              e1.setEname("AA");
+                              e1.setSalary(1010.10);
+                              System.out.println(e1);
+                              ContractEmp e2 = new ContractEmp();
+                              e2.setEmpno(20);
+                              e2.setEname("BB");
+                              e2.setSalary(2020.20);
+                              e2.setContractcomp("TCS");
+                              e2.setContractperson("Person1");
+                              System.out.println(e2);
+                    }
+          }
+          
+          -> Run
+          -> check e2.set -which methods are shown with extends and without extends
+          
+Assignmnet -  modify 4,5,6 - lab files
+          Create List, Set, Map  
+          add 5 items in each, print
+          remove 1 item from each
+          print 
+---------------------
+Lab 6 - Map
+          import java.util.HashMap;
+          import java.util.Map;
+
+          public class Lab6 {
+
+                    public static void main(String[] args) {
+                                        Map<String, Integer> map = new HashMap<String, Integer>();
+                                        map.put("Seema", 70);
+                                        map.put("Amit", 80);
+                                        map.put("Amin", 82);
+                                        System.out.println(map);
+                                        map.put("Seema",99);
+                                        map.put("Keshor",67);
+                                        System.out.println(map);
+
+                                        System.out.println("Value for Amin is "+ map.get("Amin"));
+                    }
+          }
+
+-----------------> Run Lab4 and Lab5 both with input as aa, bb, cc, aa, cc -> and check output
+Lab 5- Replace 
+          List<String> list =new ArrayList<String>();
+       with 
+          Set<String> list = new HashSet<String>();
+-------------------------------
+Lab 4 - List
+        import java.util.ArrayList;
+        import java.util.List;
+        import java.util.Scanner;
+
+        public class Lab4 {
+        public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in);
+                List<String> list =new ArrayList<String>();
+                String s  = "a";
+                while(true) {
+                        System.out.println("Enter a name : ");
+                         s = scanner.next();
+                         if (s.equals("end"))
+                                 break;
+                         list.add(s);
+                }
+                System.out.println(list);
+        }
+        }
+-------------------------
+Lab 3 - Ask a number from user, initialize with that size and then put random numbers in that array and print
+        import java.util.Arrays;
+        import java.util.Scanner;
+
+        public class Lab3 {
+
+                public static void main(String[] args) {
+                        // TODO Auto-generated method stub
+                        Scanner scanner = new Scanner(System.in);
+                        System.out.println("Please enter a number (size of array) : ");
+                        int size = scanner.nextInt();
+                        int[] intarr = new int[size];
+                        System.out.println(Arrays.toString(intarr));
+                        for(int i =0;i<intarr.length; i++) {
+                                intarr[i]=(int)(Math.random()*100);
+                                System.out.println("Current i = " + i + ", Value = " + intarr[i]);
+                        }
+                }
+        }
+
+-------------------------
+Lab 2- create array of Strings -> size as 3
+        add 3 items -> Pen, Pencil, InkPen
+        print using for loop
+        
+--------------------------
+Lab 1- 
+      import java.util.Scanner;
+
+      public class Lab1 {
+
+        public static void main(String[] args) {
+          int no1 =10;
+          System.out.println("Number 1 =  " + no1);
+        //	int[] arr = new int[5];
+          int[] arr =  {10,20,40,60,70,400};
+          System.out.println(arr[0]);
+          System.out.println(arr[1]);
+          System.out.println(arr[2]);
+          System.out.println(arr[3]);
+          System.out.println(arr[4]);
+          for (int i = 0;i<arr.length;i++) {
+            System.out.println("In For, current i = " + i + " value of arr = " + arr[i]);
+          }
+
+          int i = 0;
+          while (i < arr.length) {
+            System.out.println("In While, current i = " + i + " value of arr = " + arr[i]);
+            i++;
+          }
+        }
+      }
